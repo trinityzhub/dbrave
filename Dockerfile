@@ -39,9 +39,9 @@ RUN apt-get update -y
 RUN apt-get install -y brave-browser
 
 # Replace 1000 with your user / group id
-RUN export user=${USER} group=${UNIXGROUP} uid=1000 gid=998 && \
+RUN export user=${USER} group=${UNIXGROUP} uid=1000 gid=1000 && \
     mkdir -p /home/${user} && \
-    groupadd -g 998 ${group} && \
+    groupadd -g 1000 ${group} && \
     useradd --uid ${uid} --gid ${gid} -d /home/${user} -ms /bin/bash ${user} && \
     chown -R ${user}:${group} /home/${user}
 
