@@ -1,15 +1,19 @@
 #!/bin/bash
 
-
-docker container ls --format "{{.Names}}"
+echo "CONTAINER NAME:"
+docker container ls --all --format "{{.Names}}"
 
 echo -e "\n"
 read -p 'Enter  container name (eg: dbrave-spring ): ' CONTAINER_NAME
+##### find image id
+IMAGE_NAME= $(docker container ls --all | grep "dbrave-spring" | awk '{print $2}')
 
 
 docker rm $CONTAINER_NAME
 
-##docker rmi $IMAGE
+#####  docker rmi $IMAGE
+## docker container ls --all | grep "dbrave-spring" | awk '{print $2}'
+docker rmi $IMAGE_NAME
 
 rm -rf $HOME/.local/bin/$CONTAINER_NAME
 
