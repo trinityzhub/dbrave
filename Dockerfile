@@ -10,6 +10,7 @@ MAINTAINER hkdb <hkdb@3df.io>
 # Set username ENV
 ARG USER
 ARG PASS
+ARG UNIXGROUP
 
 # Set ENV to Non-Interactive Install
 ENV DEBIAN_FRONTEND noninteractive
@@ -38,11 +39,11 @@ RUN apt-get update -y
 RUN apt-get install -y brave-browser
 
 # Replace 1000 with your user / group id
-RUN export user=${USER} uid=1000 gid=1000 && \
+RUN export user=${USER} group=${UNIXGROUP} uid=1000 gid=998 && \
     mkdir -p /home/${user} && \
-    groupadd -g 1000 ${user} && \
+    groupadd -g 998 ${group} && \
     useradd --uid ${uid} --gid ${gid} -d /home/${user} -ms /bin/bash ${user} && \
-    chown -R ${user}:${user} /home/${user}
+    chown -R ${user}:${group} /home/${user}
 
 # Adding user to audio group so that Brave can play audio
 RUN export user=${USER} && usermod -a -G audio ${user}
