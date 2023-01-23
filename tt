@@ -15,5 +15,8 @@ git remote add pvt https://github.com/joel9vvs/braved.git
 
 git remote add private https://github.com/joel9vvs/braved.git
 
+git remote add public https://github.com/joel9vvs/dbrave.git
+
+
 
 git push private main
