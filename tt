@@ -10,3 +10,10 @@ ll
 
 
 git remote add pvt https://github.com/joel9vvs/braved.git
+
+
+
+git remote add private https://github.com/joel9vvs/braved.git
+
+
+git push private main
