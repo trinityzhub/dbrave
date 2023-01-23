@@ -4,6 +4,8 @@
 ## dBrave Installation Script
 ##
 
+##    ./home/ubbe/CodeBase/DockerGit/DailyLifeApps/dbrave-j9/braved/run.sh
+
 ## maintained by: hkdb <hkdb@3df.io>
 
 echo -e "\n"
