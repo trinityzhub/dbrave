@@ -7,3 +7,6 @@ Download : /workspaces/dockerapps/downloads
 ll
 
 ## testing another user push via github edit
+
+
+git remote add private https://github.com/joel9vvs/braved.git
